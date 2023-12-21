@@ -9,6 +9,7 @@ import {
 import LogIn from './Pages/LogIn.jsx';
 import Home from './Pages/Home.jsx';
 import AuthProvider from './AuthContext/AuthProvider.jsx';
+import Registration from './Pages/Registration.jsx';
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/LogIn",
         element: <LogIn></LogIn> 
+      },
+      {
+        path: "/registration",
+        element: <Registration></Registration>
       }
     ]
   },

@@ -7,7 +7,7 @@ const Banner = () => {
         navigate('/LogIn')
     }
     return (
-        <div className="hero min-h-screen" style={{backgroundImage: `url(${picture})`}}>
+        <div className="hero min-h-screen mb-10" style={{backgroundImage: `url(${picture})`}}>
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
             <div className="mx-auto">
