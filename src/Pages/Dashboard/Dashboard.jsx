@@ -18,13 +18,22 @@ const Dashboard = () => {
                 <ul className="menu p-4 pt-14">
                    
                     <>
+                            <li className=''>
+                                <button className='flex gap-3'> <img className='w-10 rounded-full' src={user.photoURL} /><p className='text-2xl'>{user.displayName}</p></button> 
+                            </li>
+                            <li className=''>
+                                <button className='flex'>Email: {user.email}</button> 
+                            </li>
+                            <li className='pb-5'>
+                                <button onClick={handleClick} className='bg-rose-700 w-28 rounded-lg text-zinc-100'>Log Out</button>
+                            </li>
                             <li className='pb-5'>
                                 <NavLink to="/dashboard">
-                                <button className='flex gap-3'><FaUserEdit className='text-2xl'/>Edit Biodata</button></NavLink>
+                                <button className='flex gap-3'><FaUserEdit className='text-2xl'/>Add Task</button></NavLink>
                             </li>
                             <li className='pb-5'>
                                 <NavLink to="/dashboard/viewbiodata">
-                                <button className='flex gap-3'><FaStreetView className='text-2xl'/>View Biodata</button>
+                                <button className='flex gap-3'><FaStreetView className='text-2xl'/>To</button>
                                 </NavLink>
                             </li>
                             <li className='pb-5'>
@@ -32,17 +41,11 @@ const Dashboard = () => {
                                 <button className='flex gap-3'><FaUserClock className='text-2xl'/>My Contact Request</button>  
                                 </NavLink>
                             </li>
-                            <li className='pb-5'>
-                                <NavLink to="/dashboard/favourite">
-                                <button className='flex gap-3'><FaUserCircle className='text-2xl'/>My Favourite Biodata</button>
-                                </NavLink>
-                            </li>
+                           
                             
                     </>
                        
-                    <li className='pt-5'>
-                        <button onClick={handleClick} className='bg-rose-700 w-28 rounded-lg text-zinc-100'>Log Out</button>
-                    </li>
+                   
                 </ul>
             </div>
             {/* dashboard content */}
