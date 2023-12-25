@@ -42,7 +42,12 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <AddTask></AddTask>
+      },
+      {
+        path: "/dashboard/todo",
+        element: <Todo></Todo>
       }
+
     ]
     }
 ]);

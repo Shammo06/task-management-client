@@ -2,18 +2,22 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import swal from "sweetalert";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthContext/AuthProvider";
 
 
 
 const AddTask = () => {
     const {register, handleSubmit,reset} = useForm();
+    const {user} = useContext(AuthContext);
     
     const onSubmit = data => {
-      data["type"]='todo' 
+      data["type"]='todo'
+      data["user"]= user.email 
       axios.post('http://localhost:5000/task', data)
        .then(response  => {
          if(response.statusText==='OK'){
-             swal("Successfully", "Your Food has been Added.", "success");
+             swal("Successfully", "Your Task has been Added.", "success");
              reset();
          }
        })

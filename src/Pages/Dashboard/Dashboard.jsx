@@ -32,15 +32,11 @@ const Dashboard = () => {
                                 <button className='flex gap-3'><FaUserEdit className='text-2xl'/>Add Task</button></NavLink>
                             </li>
                             <li className='pb-5'>
-                                <NavLink to="/dashboard/viewbiodata">
-                                <button className='flex gap-3'><FaStreetView className='text-2xl'/>To</button>
+                                <NavLink to="/dashboard/todo">
+                                <button className='flex gap-3'><FaStreetView className='text-2xl'/>To Do</button>
                                 </NavLink>
                             </li>
-                            <li className='pb-5'>
-                                <NavLink to="/dashboard/contactrequest">
-                                <button className='flex gap-3'><FaUserClock className='text-2xl'/>My Contact Request</button>  
-                                </NavLink>
-                            </li>                 
+                                            
                             
                     </>
                        
