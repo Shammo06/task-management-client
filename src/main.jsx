@@ -12,6 +12,8 @@ import AuthProvider from './AuthContext/AuthProvider.jsx';
 import Registration from './Pages/Registration.jsx';
 import PrivateRoute from './AuthContext/PrivateRoute.jsx';
 import Dashboard from './Pages/Dashboard/Dashboard.jsx';
+import Todo from './Pages/Dashboard/Todo.jsx';
+import AddTask from './Pages/Dashboard/AddTask.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,7 +39,10 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children :[
-      
+      {
+        path: "/dashboard",
+        element: <AddTask></AddTask>
+      }
     ]
     }
 ]);

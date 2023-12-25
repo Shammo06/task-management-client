@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useContext } from "react";
-import { FaHome,FaUserEdit,FaUserCheck,FaUserPlus, FaStreetView,FaUserClock,FaUserCircle} from "react-icons/fa";
+import {FaUserEdit, FaStreetView,FaUserClock} from "react-icons/fa";
 import { AuthContext } from "../../AuthContext/AuthProvider";
 
 
@@ -40,8 +40,7 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/contactrequest">
                                 <button className='flex gap-3'><FaUserClock className='text-2xl'/>My Contact Request</button>  
                                 </NavLink>
-                            </li>
-                           
+                            </li>                 
                             
                     </>
                        

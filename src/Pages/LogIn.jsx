@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
@@ -9,7 +9,8 @@ import picture from '../../public/banner.png'
 
 const LogIn = () => {
     
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
     const {logIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -31,19 +32,18 @@ const LogIn = () => {
     }
 
     const handleClickGoogle = () => {
-        signInWithPopup(auth,provider)
+        signInWithPopup(auth,googleProvider)
         .then(result =>{
                 navigate(location.state ? location.state : '/')
         })
         .catch(error=>console.log(error.message))
     }
     const handleClickGithub = () => {
-        // signInWithPopup(auth,provider)
-        // .then(result =>{
-        //         navigate(location.state ? location.state : '/')
-        // })
-        // .catch(error=>console.log(error.message))
-        console.log('github')
+        signInWithPopup(auth,githubProvider)
+        .then(result =>{
+                navigate(location.state ? location.state : '/')
+        })
+        .catch(error=>console.log(error.message))
     }
     return (
         <div className="py-20" style={{backgroundImage: `url(${picture})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
