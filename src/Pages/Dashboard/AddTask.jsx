@@ -14,7 +14,7 @@ const AddTask = () => {
     const onSubmit = data => {
       data["type"]='todo'
       data["user"]= user.email 
-      axios.post('http://localhost:5000/task', data)
+      axios.post('https://task-management-server-e8j1bwzy3-shammo06.vercel.app/task', data)
        .then(response  => {
          if(response.statusText==='OK'){
              swal("Successfully", "Your Task has been Added.", "success");

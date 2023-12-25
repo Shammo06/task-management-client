@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-
 import swal from "sweetalert";
 import { AuthContext } from "../../AuthContext/AuthProvider";
 
@@ -10,7 +9,7 @@ const Todo = () => {
     const {user} =useContext(AuthContext);
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/task?user=${user?.email}`)
+        axios.get(`https://task-management-server-e8j1bwzy3-shammo06.vercel.app/task?user=${user?.email}`)
         .then(data=> setData(data.data))
     })
     console.log(data)
@@ -25,7 +24,7 @@ const Todo = () => {
           })
           .then((willDelete) => {
             if (willDelete) {
-              fetch(`http://localhost:5000/task/${id}`,{
+              fetch(`https://task-management-server-e8j1bwzy3-shammo06.vercel.app/task/${id}`,{
                 method: 'DELETE'
                  })
                 .then(res => res.json())
@@ -76,7 +75,7 @@ const Todo = () => {
                 </div></>
                 
               :
-              <p>No Food Request Available for this food</p>
+              <p>No Task available</p>
 
             }          
         </div>

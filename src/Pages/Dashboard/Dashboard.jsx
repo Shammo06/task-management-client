@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useContext } from "react";
-import {FaUserEdit, FaStreetView,FaUserClock} from "react-icons/fa";
+import {FaUserEdit, FaStreetView} from "react-icons/fa";
 import { AuthContext } from "../../AuthContext/AuthProvider";
 
 
@@ -20,9 +20,6 @@ const Dashboard = () => {
                     <>
                             <li className=''>
                                 <button className='flex gap-3'> <img className='w-10 rounded-full' src={user.photoURL} /><p className='text-2xl'>{user.displayName}</p></button> 
-                            </li>
-                            <li className=''>
-                                <button className='flex'>Email: {user.email}</button> 
                             </li>
                             <li className='pb-5'>
                                 <button onClick={handleClick} className='bg-rose-700 w-28 rounded-lg text-zinc-100'>Log Out</button>
